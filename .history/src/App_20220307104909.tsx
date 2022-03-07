@@ -40,10 +40,6 @@ function App() {
         })
       }
     })
-
-    return () => {
-      unssubscribe();
-    }
   }, [])
 
   async function signInWithGoogle(){

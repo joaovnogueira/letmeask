@@ -25,9 +25,9 @@ function App() {
   const [user, setUser] = useState<User>()
 
   useEffect(() => {
-   const unssubscribe = auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged(user => {
       if (user) {
-        const {displayName,photoURL, uid} = user;
+        const {displayName,photoURL, uid} = result.user;
 
         if(!displayName || !photoURL){
           throw new Error('Missing Information from Google Account.')
@@ -40,10 +40,6 @@ function App() {
         })
       }
     })
-
-    return () => {
-      unssubscribe();
-    }
   }, [])
 
   async function signInWithGoogle(){
