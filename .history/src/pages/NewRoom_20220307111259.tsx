@@ -7,13 +7,12 @@ import googleIconImage from '../assets/images/google-icon.svg';
 import '../styles/auth.scss'
 
 import { Button } from '../components/Button'
-import { useAuth } from "../hooks/useAuth";
-//import { useContext } from "react";
-//import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from "react";
+import { AuthContext } from ".App";
 
 export function NewRoom() {
-    const { user } = useAuth();
-    //const{ user } = useContext(AuthContext);
+
+    const{ user } = useContext(AuthContext);
     return(
         <div id = 'page-auth'>
             <aside>
@@ -24,6 +23,7 @@ export function NewRoom() {
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask Logo"/>
+                    <h1>{user?.name}</h1>
                     <h2>Criar uma nova sala</h2>
                     <form>
                         <input 

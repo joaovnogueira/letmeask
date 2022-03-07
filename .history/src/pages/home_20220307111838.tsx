@@ -13,6 +13,9 @@ import googleIconImage from '../assets/images/google-icon.svg';
 import '../styles/auth.scss'
 
 import { Button } from '../components/Button'
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { sign } from "crypto";
 import { useAuth } from "../hooks/useAuth";
 
 export function Home() {

@@ -1,7 +1,9 @@
+import firebase from 'firebase/compat/app';
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom'
+import { auth } from './services/firebase';
 
 import { AuthContextProvider } from './contexts/AuthContext'
 

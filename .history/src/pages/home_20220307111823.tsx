@@ -13,7 +13,9 @@ import googleIconImage from '../assets/images/google-icon.svg';
 import '../styles/auth.scss'
 
 import { Button } from '../components/Button'
-import { useAuth } from "../hooks/useAuth";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { sign } from "crypto";
 
 export function Home() {
     const history = useHistory();
