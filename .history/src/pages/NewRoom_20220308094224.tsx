@@ -9,7 +9,6 @@ import '../styles/auth.scss'
 
 import { Button } from '../components/Button'
 import { useAuth } from "../hooks/useAuth";
-import { database } from "../services/firebase";
 //import { useContext } from "react";
 //import { AuthContext } from "../contexts/AuthContext";
 
@@ -26,12 +25,7 @@ export function NewRoom() {
             return;
         }
 
-        const roomRef = database.ref('rooms');
-
-        const firebaseRoom = await roomRef.push({
-            title: newRoom,
-            authorId: user?.id,
-        });
+        const roomRef = database.ref('rooms')
     }
 
     return(

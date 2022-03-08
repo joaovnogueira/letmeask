@@ -30,7 +30,7 @@ export function NewRoom() {
 
         const firebaseRoom = await roomRef.push({
             title: newRoom,
-            authorId: user?.id,
+            authorId:
         });
     }
 
