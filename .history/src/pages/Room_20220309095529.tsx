@@ -12,7 +12,7 @@ export function Room(){
                     <div>código da sala</div>
                 </div>
             </header>
-            <main>
+            <main className="content">
                 <div className="room-title">
                     <h1>Sala React</h1>
                     <span>4 perguntas</span>
