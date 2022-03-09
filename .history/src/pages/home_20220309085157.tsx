@@ -44,8 +44,7 @@ export function Home() {
             alert('Room does not exists.')
             return;
         }
-
-        history.push(`/rooms/${roomCode}`)
+        
     }
 
     return(

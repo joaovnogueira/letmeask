@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 //import 'firebase/compat/auth';
-import {auth, database, firebase} from '../services/firebase'
+import {auth, firebase} from '../services/firebase'
 //import firebase from 'firebase/compat/app';
 
 
@@ -35,17 +35,8 @@ export function Home() {
         event.preventDefault();
 
         if (roomCode.trim() == ''){
-            return;
+            return()~;
         }
-
-        const roomRef = await database.ref(`rooms/${roomCode}`).get();
-
-        if(!roomRef.exists()){
-            alert('Room does not exists.')
-            return;
-        }
-
-        history.push(`/rooms/${roomCode}`)
     }
 
     return(
