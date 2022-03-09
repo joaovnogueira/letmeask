@@ -11,8 +11,8 @@ type RoomParams = {
 }
 
 export function Room(){
-    const params = useParams<RoomParams>();
-    
+    const params = useParams <RoomParams()> ();
+
     return(
         <div id ="page-room">
             <header>

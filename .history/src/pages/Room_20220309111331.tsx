@@ -11,14 +11,14 @@ type RoomParams = {
 }
 
 export function Room(){
-    const params = useParams<RoomParams>();
-    
+    const params = useParams<RoomParams()>();
+
     return(
         <div id ="page-room">
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
-                    <RoomCode code={params.id} />
+                    <RoomCode code={params.} />
                 </div> 
             </header>
             <main>

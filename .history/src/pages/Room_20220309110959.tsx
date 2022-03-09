@@ -6,19 +6,15 @@ import { RoomCode } from '../components/RoomCode';
 
 import '../styles/rooms.scss';
 
-type RoomParams = {
-    id: string;
-}
-
 export function Room(){
-    const params = useParams<RoomParams>();
-    
+    const params = ()
+
     return(
         <div id ="page-room">
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
-                    <RoomCode code={params.id} />
+                    <RoomCode code="5156161651"/>
                 </div> 
             </header>
             <main>
