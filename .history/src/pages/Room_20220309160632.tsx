@@ -11,15 +11,6 @@ import { database } from '../services/firebase';
 
 import '../styles/rooms.scss';
 
-type FirebaseQuestions = Record <string, {
-    author: {
-        name: string;
-        avatar: string;
-      }
-      content: string;
-      isAnswered: boolean;
-      isHighlighted: boolean;
-}>
 
 type Question = {
     id: string;
@@ -48,24 +39,10 @@ export function Room(){
     useEffect(() => {
         const roomRef = database.ref(`rooms/${roomId}`)
 
-        roomRef.on('value', room => {
-            const databaseRoom = room.val();
-            const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
-
-            const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
-                return {
-                  id: key,
-                  content: value.content,
-                  author: value.author,
-                  isHighlighted: value.isHighlighted,
-                  isAnswered: value.isAnswered,
-                }
-              })
-
-              setTitle(databaseRoom.title);
-              setQuestions(parsedQuestions)
+        roomRef.once('value', room => {
+            console.log('')
         })
-    }, [roomId])
+    }, [])
 
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
@@ -100,13 +77,12 @@ export function Room(){
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
                     <RoomCode code={roomId} />
-
                 </div> 
             </header>
             <main>
                 <div className="room-title">
-                    <h1>Sala {title}</h1>
-                    { questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+                    <h1>Sala React</h1>
+                    <span>4 perguntas</span>
                 </div>
                 
 
@@ -128,7 +104,6 @@ export function Room(){
                         <Button type="submit" disabled={!user}>Enviar pergunta</Button>
                     </div>
                 </form>
-
             </main>
         </div>
     );
