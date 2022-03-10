@@ -23,11 +23,12 @@ export function Room(){
     const { user } = useAuth();
     const params = useParams<RoomParams>();
     const [newQuestion, setNewQuestion] = useState('');
+    const {  } = useRoom(roomId)
+   
+
     const roomId = params.id;
 
-    const { title, questions } = useRoom(roomId)
-      
-  
+    
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
 

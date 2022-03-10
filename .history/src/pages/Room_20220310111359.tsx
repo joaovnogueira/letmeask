@@ -8,8 +8,6 @@ import { Question } from '../components/Question';
 import { RoomCode } from '../components/RoomCode';
 
 import { useAuth } from '../hooks/useAuth';
-import { useRoom } from '../hooks/useRoom';
-
 import { database } from '../services/firebase';
 
 import '../styles/rooms.scss';
@@ -23,11 +21,12 @@ export function Room(){
     const { user } = useAuth();
     const params = useParams<RoomParams>();
     const [newQuestion, setNewQuestion] = useState('');
+    const {}
+   
+
     const roomId = params.id;
 
-    const { title, questions } = useRoom(roomId)
-      
-  
+    
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
 
