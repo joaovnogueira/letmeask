@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';

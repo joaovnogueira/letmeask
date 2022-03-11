@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
@@ -22,25 +22,10 @@ type RoomParams = {
 
 export function AdminRoom(){
     //const { user } = useAuth();
-
-    const history = useHistory()
     const params = useParams<RoomParams>();
     const roomId = params.id;
 
     const { title, questions } = useRoom(roomId)
-
-    async function handleEndRoom(){
-        await database.ref(`rooms/${roomId}`).update({
-            endedAt: new Date(),
-        })
-
-        history.push('/');
-
-    async function handleDeleteQuestion(questionId: string){
-       if (window.confirm('Tem certeza que deseja excluir essa pergunta?')){
-           await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
-       }
-    }
       
 
     return(
@@ -50,7 +35,7 @@ export function AdminRoom(){
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
-                        <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
+                        <Button isOutlined>Encerrar sala</Button>
                     </div>
                 </div> 
             </header>
@@ -70,7 +55,7 @@ export function AdminRoom(){
                             >
                                 <button
                                     type='button'
-                                    onClick={() => handleDeleteQuestion(question.id)}
+                                    onClick={()}
                                 >
                                     <img src={deleteImg} alt="Remover pergunta" />
                                 </button>
