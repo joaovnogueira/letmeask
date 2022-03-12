@@ -59,9 +59,8 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <a href="/">
-            <button id='Logo'>Letmeask</button>
-          </a>
+          a
+          
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>

@@ -45,7 +45,7 @@ export function NewRoom() {
             </aside>
             <main>
                 <div className="main-content">
-                    <a href="/">
+                <    <a href="/">
                         <button id='Logo'>Letmeask</button>
                      </a>
                     <h2>Criar uma nova sala</h2>

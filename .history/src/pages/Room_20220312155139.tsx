@@ -69,8 +69,8 @@ export function Room(){
             <header>
                 <div className="content">
                     <a href="/">
-                        <button id='Logo'>Letmeask</button>
-                     </a>
+            <button id='Logo'>Letmeask</button>
+          </a>
                     <RoomCode code={roomId} />
 
                 </div> 
